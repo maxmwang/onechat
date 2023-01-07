@@ -16,6 +16,9 @@ body {
 .chat {
   height: 30vh;
   width: 30vw;
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .text-input {

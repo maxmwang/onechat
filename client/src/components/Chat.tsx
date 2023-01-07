@@ -13,8 +13,9 @@ function Chat(props: ChatProps) {
 
   useEffect(() => {
     socket.on('message', (data) => {
-      console.log(data);
-      setMessage((prevState) => [...prevState, data]);
+      setMessage((prevState) => [data, ...prevState]);
+      // data is added to front of list because content
+      // is displayed in reverse to allow scrolling to stay at bottom
     });
   }, []);
 

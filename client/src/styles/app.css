@@ -1,0 +1,22 @@
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.chat {
+  height: 30vh;
+  width: 30vw;
+}
+
+.text-input {
+  width: 100%;
+}

@@ -14,14 +14,15 @@ function Chat(props: ChatProps) {
   useEffect(() => {
     socket.on('message', (data) => {
       console.log(data);
-      setMessage([...messages, data]);
+      setMessage((prevState) => [...prevState, data]);
     });
   }, []);
 
   return (
     <div className="chat">
-      {messages.map((message) => (
-        <Typography variant="body1">{`${message.sender}: ${message.message}`}</Typography>
+      {messages.map((message, i) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <Typography key={i} variant="body1">{`${message.sender}: ${message.message}`}</Typography>
       ))}
     </div>
   );

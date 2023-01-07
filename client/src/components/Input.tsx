@@ -12,17 +12,28 @@ function Input(props: InputProps) {
 
   const [input, setInput] = useState('');
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    socket.emit('message', { sender: username, message: input });
+    setInput('');
+  };
+
   return (
-    <Stack direction="row">
-      <TextField className="text-input" label="Message" variant="standard" value={input} onChange={(e) => setInput(e.target.value)} />
-      <IconButton onClick={() => {
-        socket.emit('message', { sender: username, message: input });
-        setInput('');
-      }}
-      >
-        <Send />
-      </IconButton>
-    </Stack>
+    <form onSubmit={handleSubmit}>
+      <Stack direction="row">
+        <TextField
+          className="text-input"
+          autoFocus
+          label="Message"
+          variant="standard"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <IconButton onClick={() => handleSubmit()}>
+          <Send />
+        </IconButton>
+      </Stack>
+    </form>
   );
 }
 

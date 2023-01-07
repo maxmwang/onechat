@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {
-  Paper, Stack, TextField, IconButton,
+  Stack,
+  TextField,
+  IconButton,
 } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
 
@@ -12,26 +14,27 @@ function ChatView(props: ChatViewProps) {
 
   const [name, setName] = useState('');
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setUsername(name);
+  };
+
   return (
-    <Paper className="box">
+    <form className="box" onSubmit={handleSubmit}>
       <Stack direction="row">
         <TextField
           className="text-input"
+          autoFocus
           label="Name"
           variant="standard"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <IconButton
-          className="button"
-          onClick={() => {
-            setUsername(name);
-          }}
-        >
+        <IconButton className="button" onClick={handleSubmit}>
           <LoginIcon />
         </IconButton>
       </Stack>
-    </Paper>
+    </form>
   );
 }
 

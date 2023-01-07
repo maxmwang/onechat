@@ -29,7 +29,7 @@ function Input(props: InputProps) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <IconButton onClick={() => handleSubmit()}>
+        <IconButton onClick={(e) => handleSubmit(e)}>
           <Send />
         </IconButton>
       </Stack>

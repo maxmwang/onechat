@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node build/server.js",
     "dev-server": "nodemon -e ts --ignore cilent --exec \"tsc && node build/server.js\"",
-    "dev-client": "npm run start --prefix client",
+    "dev-client": "npm run dev --prefix client",
     "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run dev-client\""
   },
   "author": "",

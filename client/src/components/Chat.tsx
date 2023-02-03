@@ -22,8 +22,13 @@ function Chat(props: ChatProps) {
   return (
     <div className="chat">
       {messages.map((message, i) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <Typography key={i} variant="body1">{`${message.sender}: ${message.message}`}</Typography>
+        <div className="message">
+          {/* eslint-disable-next-line react/no-array-index-key */}
+          <Typography key={`sender${i}`} className="message" variant="body1" sx={{ fontWeight: 'bold' }}>{`${message.sender}:`}</Typography>
+          {' '}
+          {/* eslint-disable-next-line react/no-array-index-key */}
+          <Typography key={`semder${i}`} className="message" variant="body1">{`${message.message}`}</Typography>
+        </div>
       ))}
     </div>
   );

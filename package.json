@@ -7,7 +7,8 @@
     "start": "node build/server.js",
     "dev-server": "nodemon -e ts --ignore cilent --exec \"tsc && node build/server.js\"",
     "dev-client": "npm run dev --prefix client",
-    "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run dev-client\""
+    "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run dev-client\"",
+    "heroku-postbuild": "tsc && cd client && npm install --omit=dev && npm run build"
   },
   "author": "",
   "license": "ISC",

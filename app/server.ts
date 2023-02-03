@@ -12,9 +12,7 @@ const server = http.createServer(app);
 const io: Server = new Server(server);
 
 io.on('connection', async (socket) => {
-  console.log('New client connected');
   socket.on('message', (message) => {
-    console.log(message);
     io.emit('message', message);
   });
 });

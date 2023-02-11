@@ -16,6 +16,11 @@ function Input(props: InputProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!input) {
+      return;
+    }
+
     socket.emit('message', {
       sender: username,
       message: input,

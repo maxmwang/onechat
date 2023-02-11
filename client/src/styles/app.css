@@ -29,3 +29,41 @@ body {
 .text-input {
   width: 100%;
 }
+
+.color-picker {
+  border: 1px solid black;
+}
+
+.color {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.swatch {
+  padding: 4px;
+  position: relative;
+  top: 10px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
+  display: inline-block;
+  cursor: pointer;
+}
+
+.popover {
+  position: absolute;
+  transform: translate(-43.5%, 6%);
+  z-index: 2;
+
+  border-radius: 5px;
+  box-shadow: 10px 10px;
+}
+
+.cover {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}

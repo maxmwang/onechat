@@ -21,7 +21,7 @@ function ChatView(props: ChatViewProps) {
 
   return (
     <form className="box" onSubmit={handleSubmit}>
-      <Stack direction="row">
+      <Stack direction="row" alignItems="center">
         <TextField
           className="text-input"
           autoFocus
